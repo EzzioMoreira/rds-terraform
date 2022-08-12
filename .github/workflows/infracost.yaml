@@ -4,7 +4,7 @@ on:
   pull_request:
   
 jobs:
-  terraform:
-    uses: "EzzioMoreira/cicd_centralizado/.github/workflows/infracost.yaml@feat/add-infacost"
+  infracost:
+    uses: "EzzioMoreira/cicd_centralizado/.github/workflows/infracost.yaml@feat/add-infracost"
     secrets:
       INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
