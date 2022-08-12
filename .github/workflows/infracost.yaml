@@ -1,4 +1,5 @@
-on: [pull_request]
+on:
+  push:
 env:
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
 jobs:
