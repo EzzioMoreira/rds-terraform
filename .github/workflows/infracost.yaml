@@ -1,7 +1,7 @@
 name: "Estimativa de custo Infracost"
 
 on:
-  push:
+  pull_request:
   
 jobs:
   infracost:
