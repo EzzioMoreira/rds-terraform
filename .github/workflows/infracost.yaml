@@ -1,10 +1,13 @@
 name: "Estimativa de custo Infracost"
 
-on: 
+on:
   pull_request:
+    paths:
+      - "**.tf"
   
 jobs:
   infracost:
     uses: "EzzioMoreira/cicd_centralizado/.github/workflows/infracost.yaml@feat/add-infracost"
     secrets:
-      INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
+
