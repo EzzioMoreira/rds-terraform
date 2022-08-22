@@ -38,7 +38,7 @@ jobs:
       - name: Gerando estimativa de custo atual
         run: |
           infracost breakdown --path=${{ inputs.tf_directory }} \
-                              --format=slack-message \
+                              --format=table \
                               --out-file=/tmp/infracost-base.md
 
       - name: Checkout PR branch
@@ -47,7 +47,7 @@ jobs:
       - name: Gerando diferença de custo em relação à branch atual
         run: |
           infracost diff --path=${{ inputs.tf_directory }} \
-                          --format=slack-message \
+                          --format=table \
                           --compare-to=/tmp/infracost-base.md \
                           --out-file=/tmp/infracost.md
 
