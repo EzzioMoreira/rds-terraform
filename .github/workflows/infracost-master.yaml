@@ -38,8 +38,8 @@ jobs:
       - name: Gerando estimativa de custo atual
         run: |
           infracost breakdown --path=${{ inputs.tf_directory }} \
-                              --format=table \
-                              --out-file=/tmp/infracost-base.md
+                              --format=html \
+                              --out-file=/tmp/infracost-base.html
 
       - name: Checkout PR branch
         uses: actions/checkout@v2
@@ -48,11 +48,11 @@ jobs:
         run: |
           infracost diff --path=${{ inputs.tf_directory }} \
                           --format=table \
-                          --compare-to=/tmp/infracost-base.md \
-                          --out-file=/tmp/infracost.md
+                          --compare-to=/tmp/infracost-base.html \
+                          --out-file=/tmp/infracost.html
 
       - name: Adicionando comentário no PR
         run: |
-            cat /tmp/infracost.md >> $GITHUB_STEP_SUMMARY
+            cat /tmp/infracost.html >> $GITHUB_STEP_SUMMARY
             ls -lhs /tmp
-            cat /tmp/infracost.md
+            cat /tmp/infracost.html
