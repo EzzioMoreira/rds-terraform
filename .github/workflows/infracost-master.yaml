@@ -47,7 +47,7 @@ jobs:
       - name: Gerando diferença de custo em relação à branch atual
         run: |
           infracost diff --path=${{ inputs.tf_directory }} \
-                          --format=table \
+                          --format=html \
                           --compare-to=/tmp/infracost-base.html \
                           --out-file=/tmp/infracost.html
 
