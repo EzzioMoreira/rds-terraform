@@ -12,3 +12,7 @@ output "rds_username" {
   value       = aws_db_instance.rapadura.username
   description = "RDS instance root username"
 }
+
+output "rds_arn" {
+  value = aws_db_instance.rapadura.arn
+}
