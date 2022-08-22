@@ -7,7 +7,7 @@ variable "aws_region" {
 #### The variables for RDS
 variable "storage" {
   type        = number
-  default     = 60
+  default     = 70
   description = "The allocated storage"
 }
 
