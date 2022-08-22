@@ -53,6 +53,4 @@ jobs:
 
       - name: Adicionando comentário no PR
         run: |
-            cat /tmp/infracost.html >> $GITHUB_STEP_SUMMARY
-            ls -lhs /tmp
-            cat /tmp/infracost.html
+            cat /tmp/infracost.md >> $GITHUB_STEP_SUMMARY
