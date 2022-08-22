@@ -38,8 +38,8 @@ jobs:
       - name: Gerando estimativa de custo atual
         run: |
           infracost breakdown --path=${{ inputs.tf_directory }} \
-                              --format=html \
-                              --out-file=/tmp/infracost-base.html
+                              --format=json \
+                              --out-file=/tmp/infracost-base.json
 
       - name: Checkout PR branch
         uses: actions/checkout@v2
@@ -47,8 +47,8 @@ jobs:
       - name: Gerando diferença de custo em relação à branch atual
         run: |
           infracost diff --path=${{ inputs.tf_directory }} \
-                          --format=html \
-                          --compare-to=/tmp/infracost-base.html \
+                          --format=diff \
+                          --compare-to=/tmp/infracost-base.json \
                           --out-file=/tmp/infracost.html
 
       - name: Adicionando comentário no PR
