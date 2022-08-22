@@ -49,7 +49,7 @@ jobs:
           infracost diff --path=${{ inputs.tf_directory }} \
                           --format=diff \
                           --compare-to=/tmp/infracost-base.json \
-                          --out-file=/tmp/infracost.html
+                          --out-file=/tmp/infracost.md
 
       - name: Adicionando comentário no PR
         run: |
