@@ -13,7 +13,7 @@ variable "storage" {
 
 variable "storage_type" {
   type        = string
-  default     = "gp2"
+  default     = "gp3"
   description = "The type of the storage"
 }
 
