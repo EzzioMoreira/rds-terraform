@@ -30,7 +30,7 @@ variable "engine_version" {
 }
 
 variable "instance_type" {
-  default     = "db.t2.small"
+  default     = "db.t2.nano"
   type        = string
   description = "The RDS instance class"
 }
