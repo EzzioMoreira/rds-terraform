@@ -7,13 +7,13 @@ variable "aws_region" {
 #### The variables for RDS
 variable "storage" {
   type        = number
-  default     = 20
+  default     = 70
   description = "The allocated storage"
 }
 
 variable "storage_type" {
   type        = string
-  default     = "gp2"
+  default     = "gp3"
   description = "The type of the storage"
 }
 
@@ -30,7 +30,7 @@ variable "engine_version" {
 }
 
 variable "instance_type" {
-  default     = "db.t2.small"
+  default     = "db.t2.nano"
   type        = string
   description = "The RDS instance class"
 }

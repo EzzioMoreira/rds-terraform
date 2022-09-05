@@ -5,6 +5,5 @@ on:
 
 jobs:
   infracost:
-    uses: "EzzioMoreira/rds-terraform/.github/workflows/infracost-master.yaml@master"
-    secrets:
-      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
+    uses: "EzzioMoreira/cicd_centralizado/.github/workflows/infracost.yaml@feat/add-infracost"
+    secrets: inherit
